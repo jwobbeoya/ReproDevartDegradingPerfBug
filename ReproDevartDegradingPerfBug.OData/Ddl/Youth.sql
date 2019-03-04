@@ -1,0 +1,6 @@
+﻿CREATE TABLE OYA.YOUTH
+(
+  YOUTH_ID        NUMBER         NOT NULL,
+  JJIS_NUMBER     CHAR(8 BYTE)
+);
+
