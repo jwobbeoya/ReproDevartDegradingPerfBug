@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using ReproDevartDegradingPerfBug.OData.Entities;
@@ -14,17 +16,9 @@ namespace ReproDevartDegradingPerfBug.OData.DataModel
    {
       public CoreEntities(DbContextOptions options) : base(options)
       {
+         var listener = this.GetService<DiagnosticSource>();
+         (listener as DiagnosticListener).SubscribeWithAdapter(new CommandListener());
       }
-
-      public virtual DbSet<Assessment> Assessments { get; set; }
-      public virtual DbSet<AssessmentMeasureCategoryTypeCodeItem> AssessmentMeasureCategoryTypeCodeItems { get; set; }
-      public virtual DbSet<AssessmentMeasurementChoice> AssessmentMeasurementChoices { get; set; }
-      public virtual DbSet<AssessmentPoint> AssessmentPoints { get; set; }
-      public virtual DbSet<AssessmentPointAnswer> AssessmentPointAnswers { get; set; }
-      public virtual DbSet<AssessmentPointMeasure> AssessmentPointMeasures { get; set; }
-      public virtual DbSet<AssessmentPointMeasureDetail> AssessmentPointMeasureDetails { get; set; }
-      public virtual DbSet<AssessmentTool> AssessmentTools { get; set; }
-      public virtual DbSet<FactoidDefinition> FactoidDefinitions { get; set; }
 
       protected override void OnModelCreating(ModelBuilder modelBuilder)
       {

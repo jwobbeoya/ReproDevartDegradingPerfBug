@@ -8,10 +8,11 @@ using System.Runtime.Serialization;
 namespace ReproDevartDegradingPerfBug.OData.Entities
 {
    
+   
    [DataContract(IsReference = true)]
    [ExcludeFromCodeCoverage]
    [Table("EVALUATION")]
-   public class Assessment
+   public class Assessment 
    {
       [DataMember]
       [Key]
@@ -19,7 +20,7 @@ namespace ReproDevartDegradingPerfBug.OData.Entities
       public virtual long AssessmentId { get; set; }
 
       [DataMember]
-      public virtual DateTime? RecordedDateTime { get; set; }
+      public virtual DateTimeOffset? RecordedDateTime { get; set; }
 
       [DataMember]
       public virtual long? RecordedByWorkerId { get; set; }
@@ -29,7 +30,7 @@ namespace ReproDevartDegradingPerfBug.OData.Entities
       public virtual long? AssessmentToolId { get; set; }
 
       [DataMember]
-      public virtual DateTime? CompletedDate { get; set; }
+      public virtual DateTimeOffset? CompletedDate { get; set; }
 
       [DataMember]
       public virtual long? RequestOfficeId { get; set; }
@@ -39,6 +40,10 @@ namespace ReproDevartDegradingPerfBug.OData.Entities
 
       [DataMember]
       public virtual string RiskLevel { get; set; }
+
+      [DataMember]
+      public virtual bool ConfidentialFlag { get; set; }
+
 
       [DataMember]
       [ForeignKey(nameof(AssessmentToolId))]

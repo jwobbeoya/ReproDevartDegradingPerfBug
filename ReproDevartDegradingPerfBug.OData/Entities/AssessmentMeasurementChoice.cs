@@ -6,6 +6,8 @@ using System.Runtime.Serialization;
 
 namespace ReproDevartDegradingPerfBug.OData.Entities
 {
+   
+   
    [DataContract(IsReference = true)]
    [ExcludeFromCodeCoverage]
    [Table("EVALUATIONMEASUREMENTCHOICE")]
@@ -17,7 +19,7 @@ namespace ReproDevartDegradingPerfBug.OData.Entities
       public virtual long MeasurementChoiceId { get; set; }
 
       [DataMember]
-      public virtual long? Score { get; set; }
+      public virtual decimal? Score { get; set; }
 
       [DataMember]
       public virtual string MeasurementDescription { get; set; }
@@ -34,10 +36,6 @@ namespace ReproDevartDegradingPerfBug.OData.Entities
 
       [DataMember]
       public virtual string ValueCategoryType { get; set; }
-
-      [DataMember]
-      [ForeignKey(nameof(ValueCategoryType))]
-      public virtual AssessmentMeasureCategoryTypeCodeItem ValueCategoryCodeItem { get; set; }
 
       [DataMember]
       public virtual long? FactoidDefinitionId { get; set; }

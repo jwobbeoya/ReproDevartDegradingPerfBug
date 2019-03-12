@@ -7,6 +7,7 @@ using System.Runtime.Serialization;
 namespace ReproDevartDegradingPerfBug.OData.Entities
 {
    
+   
    [DataContract(IsReference = true)]
    [ExcludeFromCodeCoverage]
    public class FactoidDefinition 
@@ -33,8 +34,5 @@ namespace ReproDevartDegradingPerfBug.OData.Entities
       [DataMember]
       public virtual ICollection<AssessmentMeasurementChoice> AssessmentMeasurementChoices { get; set; } = new HashSet<AssessmentMeasurementChoice>();
 
-      [DataMember]
-      [ForeignKey(nameof(CategoryCode))]
-      public virtual AssessmentMeasureCategoryTypeCodeItem AssessmentMeasureCategoryTypeCodeItem { get; set; }
    }
 }

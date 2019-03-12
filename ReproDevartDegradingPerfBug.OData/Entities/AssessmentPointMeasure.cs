@@ -7,14 +7,14 @@ using System.Runtime.Serialization;
 namespace ReproDevartDegradingPerfBug.OData.Entities
 {
    
+   
    [DataContract(IsReference = true)]
    [ExcludeFromCodeCoverage]
    [Table("EVALUATIONPOINTMEASURE")]
-   public class AssessmentPointMeasure 
+   public class AssessmentPointMeasure
    {
-
       [DataMember]
-      public virtual long? Score { get; set; }
+      public virtual decimal? Score { get; set; }
 
       [DataMember]
       [Column("EVALUATION_POINT_ID")]
@@ -55,7 +55,5 @@ namespace ReproDevartDegradingPerfBug.OData.Entities
       [DataMember]
       public virtual ICollection<AssessmentPointAnswer> AssessmentPointAnswers { get; set; } = new HashSet<AssessmentPointAnswer>();
 
-      [DataMember]
-      public virtual AssessmentPointMeasureDetail AssessmentPointMeasureDetail { get; set; }
    }
 }

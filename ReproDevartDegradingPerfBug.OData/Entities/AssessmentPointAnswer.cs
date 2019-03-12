@@ -6,12 +6,12 @@ using System.Runtime.Serialization;
 namespace ReproDevartDegradingPerfBug.OData.Entities
 {
    
+   
    [DataContract(IsReference = true)]
    [ExcludeFromCodeCoverage]
    [Table("EVALUATIONPOINTANSWER")]
-   public class AssessmentPointAnswer 
+   public class AssessmentPointAnswer
    {
-
       [DataMember]
       [Key]
       [Column("EVALUATION_POINT_ANSWER_ID")]

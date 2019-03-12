@@ -7,12 +7,12 @@ using System.Runtime.Serialization;
 namespace ReproDevartDegradingPerfBug.OData.Entities
 {
    
+   
    [DataContract(IsReference = true)]
    [ExcludeFromCodeCoverage]
    [Table("EVALUATIONPOINT")]
    public class AssessmentPoint
    {
-
       [DataMember]
       public virtual string Category { get; set; }
 
@@ -37,6 +37,7 @@ namespace ReproDevartDegradingPerfBug.OData.Entities
       [DataMember]
       public virtual string Description { get; set; }
 
+
       [DataMember]
       public virtual long? SeqNumber { get; set; }
 
@@ -60,6 +61,9 @@ namespace ReproDevartDegradingPerfBug.OData.Entities
       public virtual string ScoreCalcFunctionCode { get; set; }
 
       [DataMember]
+      public virtual bool ReadOnlyFlag { get; set; }
+
+      [DataMember]
       public virtual string CasePlanDomainCode { get; set; }
 
       [DataMember]
@@ -69,7 +73,10 @@ namespace ReproDevartDegradingPerfBug.OData.Entities
       public virtual long? DisplayQuestionNumber { get; set; }
 
       [DataMember]
-      public virtual long? MaximumScore { get; set; }
+      public virtual decimal? MaximumScore { get; set; }
+
+      [DataMember]
+      public virtual bool MandatoryQuestionFlag { get; set; }
 
       [DataMember]
       public virtual ICollection<AssessmentMeasurementChoice> AssessmentMeasurementChoices { get; set; } = new HashSet<AssessmentMeasurementChoice>();

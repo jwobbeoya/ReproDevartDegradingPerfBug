@@ -47,12 +47,10 @@ namespace ReproDevartDegradingPerfBug.OData
 
          var odataBuilder = new ODataConventionModelBuilder();
          odataBuilder.EntitySet<Assessment>("Assessments");
-         odataBuilder.EntitySet<AssessmentMeasureCategoryTypeCodeItem>("AssessmentMeasureCategoryTypeCodeItems");
          odataBuilder.EntitySet<AssessmentMeasurementChoice>("AssessmentMeasurementChoices");
          odataBuilder.EntitySet<AssessmentPoint>("AssessmentPoints");
          odataBuilder.EntitySet<AssessmentPointAnswer>("AssessmentPointAnswers");
          odataBuilder.EntitySet<AssessmentPointMeasure>("AssessmentPointMeasures");
-         odataBuilder.EntitySet<AssessmentPointMeasureDetail>("AssessmentPointMeasureDetails");
          odataBuilder.EntitySet<AssessmentTool>("AssessmentTools");
          odataBuilder.EntitySet<FactoidDefinition>("FactoidDefinitions");
          var model = odataBuilder.GetEdmModel();

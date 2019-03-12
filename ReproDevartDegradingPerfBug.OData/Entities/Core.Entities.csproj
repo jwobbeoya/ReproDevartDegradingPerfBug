@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>State.OR.Oya.Core.Entities</AssemblyName>
+    <RootNamespace>State.OR.Oya.Core.Entities</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0</Version>
+    <Version Condition=" '$(BUILD_BUILDID)' != '' ">$(Version).$(BUILD_BUILDID)</Version>    
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.OData.Client" Version="7.5.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
+  </ItemGroup>
+
+</Project>

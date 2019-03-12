@@ -125,15 +125,6 @@ namespace ReproDevartDegradingPerfBug.OData.Controllers
         
         #region Navigation Properties
         
-          // ValueCategoryCodeItem Navigation property
-            
-        [HttpGet]
-        [EnableNavigationQuery(MaxExpansionDepth = Consts.MaxExpansionDepth, MaxAnyAllExpressionDepth = Consts.MaxAnyAllExpressionDepth, MaxNodeCount = Consts.MaxNodeCount)]
-        public SingleResult<ReproDevartDegradingPerfBug.OData.Entities.AssessmentMeasureCategoryTypeCodeItem> GetValueCategoryCodeItem([FromODataUri] long key)
-        {
-           var result = Entities.AssessmentMeasurementChoices.Where(x => x.MeasurementChoiceId == key).Select(x => x.ValueCategoryCodeItem);
-           return SingleResult.Create(result);
-        }
 
           // AssessmentPoint Navigation property
             

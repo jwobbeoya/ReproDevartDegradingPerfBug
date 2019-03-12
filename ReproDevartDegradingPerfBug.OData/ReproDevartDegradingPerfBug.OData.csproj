@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Devart.Data.Oracle.EFCore" Version="9.6.675" />
+    <PackageReference Include="Devart.Data.Oracle.EFCore" Version="9.6.696" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.OData" Version="7.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />

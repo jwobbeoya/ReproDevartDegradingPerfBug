@@ -6,12 +6,15 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
 
 namespace ReproDevartDegradingPerfBug.OData.Entities
-{  
+{
+   
+   
    [DataContract(IsReference = true)]
    [ExcludeFromCodeCoverage]
    [Table("EVALUATIONTOOL")]
    public class AssessmentTool 
    {
+
       [DataMember]
       public virtual long? CreatedByWorkerId { get; set; }
 
@@ -30,7 +33,7 @@ namespace ReproDevartDegradingPerfBug.OData.Entities
       public virtual string Program { get; set; }
 
       [DataMember]
-      public virtual DateTime? CreatedDate { get; set; }
+      public virtual DateTimeOffset? CreatedDate { get; set; }
 
       [DataMember]
       public virtual string StatusCode { get; set; }
@@ -39,10 +42,10 @@ namespace ReproDevartDegradingPerfBug.OData.Entities
       public virtual string TypeCode { get; set; }
 
       [DataMember]
-      public virtual DateTime? ExpiredDate { get; set; }
+      public virtual DateTimeOffset? ExpiredDate { get; set; }
 
       [DataMember]
-      public virtual DateTime? ActivatedDate { get; set; }
+      public virtual DateTimeOffset? ActivatedDate { get; set; }
 
       [DataMember]
       public virtual long? VisibilityId { get; set; }
@@ -61,7 +64,13 @@ namespace ReproDevartDegradingPerfBug.OData.Entities
       public virtual long? RiskLevelAssessmentPointId { get; set; }
 
       [DataMember]
+      public virtual bool ConfidentialFlag { get; set; }
+
+      [DataMember]
       public virtual string SpecialGroupMarkerCode { get; set; }
+
+      [DataMember]
+      public virtual bool AssessmentDateDefaultFlag { get; set; }
 
       [DataMember]
       public virtual long? OfficeCodeId { get; set; }
@@ -78,6 +87,5 @@ namespace ReproDevartDegradingPerfBug.OData.Entities
 
       [DataMember]
       public virtual ICollection<AssessmentPoint> AssessmentPoints { get; set; } = new HashSet<AssessmentPoint>();
-
    }
 }
